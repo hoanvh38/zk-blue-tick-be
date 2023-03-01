@@ -1,0 +1,45 @@
+{
+    "do_not_spam": "do_not_spam",
+    "require_member_to_public_social_links": "require_member_to_public_social_links",
+    "you_are_not_owner_this_image": "you_are_not_owner_this_image",
+    "can_not_find_image": "can_not_find_image",
+    "body_was_wrong": "body_was_wrong",
+    "something_was_wrong": "something_was_wrong",
+    "not_found": "not_found",
+    "limit_rate": "limit_rate",
+    "already_created": "already_created",
+    "can_not_find_data": "can_not_find_data",
+    "internal_server_error": "Internal server error. Please try again.",
+    "user": {
+        "user_is_blocked": "user_is_blocked",
+        "can_not_find_user": "can_not_find_user",
+        "not_enough_energy": "not_enough_energy",
+        "user_not_yet_registered": "user_not_yet_registered"
+    },
+    "auth": {
+        "invalid_token": "invalid_token",
+        "token_is_empty": "token_is_empty",
+        "confirm_code_not_valid": "confirm_code_not_valid",
+        "can_not_find_viewer": "can_not_find_viewer",
+        "access_denied": "access_denied"
+    },
+    "nft_storage": {
+        "register_did_fail": "register_did_fail",
+        "can_not_get_ucan_token": "can_not_get_ucan_token",
+        "can_not_request_ucan_token": "can_not_request_ucan_token"
+    },
+    "collection" : {
+        "royalty_not_valid" : "royalty_not_valid",
+        "total_supply_not_valid" : "total_supply_not_valid"
+    },
+    "drop_event": {
+        "can_not_find_data": "can_not_find_drop_event",
+        "not_owner_of_drop_event": "not_owner_of_drop_event",
+        "stage_not_support": "stage_not_support",
+        "stage_allow_list_limit": "stage_allow_list_limit",
+        "allow_list_invalid_address": "allow_list_invalid_address"
+    },
+    "mystery_box" : {
+        "whitelist_is_not_valid" : "whitelist_is_not_valid"
+    }
+}
