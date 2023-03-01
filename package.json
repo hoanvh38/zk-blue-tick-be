@@ -13,7 +13,7 @@
         "copy:cert": "cpx './src/configs/cert/**' 'dist/configs/cert'",
         "build": "nest build && npm run copy:packagejson && npm run copy:cert",
         "format": "prettier --write \"src/**/*.ts\" && :",
-        "start": "nest start",
+        "start": "node --optimize_for_size --max_old_space_size=460 dist/main.js",
         "start:dev": "npm run copy:packagejson && nest start --watch",
         "start:debug": "nest start --debug --watch",
         "start:prod": "node dist/main",
