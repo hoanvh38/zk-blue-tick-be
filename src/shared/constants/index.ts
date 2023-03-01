@@ -9,6 +9,12 @@ export enum ROLE {
     USER = 'USER',
 }
 
+export enum REQUEST_STATUS {
+    WAITING = 'waiting',
+    APPROVED = 'approved',
+    CANCEL = 'cancel',
+}
+
 export enum REDIS_KEY {
     SYSTEM_CONFIG = 'system_config',
 }

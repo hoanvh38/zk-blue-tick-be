@@ -9,10 +9,15 @@ export class UserEntity {
         if (partial) {
             this.id = partial._id ? partial._id.toString() : partial.id
             this.address = partial.address
-            this.isBlocked = partial.isBlocked
-            this.blockNote = partial.blockNote
             this.role = partial.role
-            this.email = partial.email
+            this.isBlocked = partial.isBlocked
+            this.backImageUrl = partial.backImageUrl
+            this.frontImageUrl = partial.frontImageUrl
+            this.requestStatus = partial.requestStatus
+            this.requireImageUrl = partial.requireImageUrl
+            this.supportImageProofUrl = partial.supportImageProofUrl
+            this.idNumber = partial.idNumber
+            this.uniqueId = partial.uniqueId
             this.createdAt = partial.createdAt
             this.updatedAt = partial.updatedAt
         }

@@ -26,7 +26,7 @@ import { StorageService } from './storage.service'
 export class StorageController {
     constructor(private readonly storageService: StorageService) {}
 
-    @UseGuards(AuthGuard)
+    // @UseGuards(AuthGuard)
     @Post('image')
     @UseInterceptors(
         FileInterceptor('image', { limits: { fileSize: LIMIT_IMAGE_SIZE } })

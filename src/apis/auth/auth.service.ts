@@ -1,12 +1,6 @@
 import * as Web3 from 'web3'
 import { recoverPersonalSignature } from '@metamask/eth-sig-util'
-import {
-    BadRequestException,
-    Global,
-    Injectable,
-    NotFoundException,
-    UnauthorizedException,
-} from '@nestjs/common'
+import { BadRequestException, Global, Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
@@ -14,17 +8,10 @@ import { Model } from 'mongoose'
 import { UserEntity } from 'apis/user/entities/user.entity'
 import { User } from 'apis/user/models/user.schema'
 import { CacheService } from 'frameworks/cache-service/cache.service'
-import MailService from 'frameworks/mail-service/mail-service'
 import { BASE_VALUE, COLLECTION, ERROR } from 'shared/constants'
 import GenerateCode from 'shared/helpers/generate-code'
-import Validator from 'shared/helpers/validator'
 
-import {
-    LoginInputDto,
-    StaffLoginDto,
-    VerifyLoginInputDto,
-    VerifyStaffLoginDto,
-} from './dto'
+import { LoginInputDto, VerifyLoginInputDto } from './dto'
 import { ILoginResponse } from './entities/login-response.entity'
 
 @Global()
@@ -40,9 +27,7 @@ export class AuthService {
         this.web3 = new (Web3 as any)()
     }
 
-
     async login(doc: LoginInputDto): Promise<string> {
-        //send code to user email
         doc.address = doc.address
             ? this.web3.utils.toChecksumAddress(doc.address)
             : null
@@ -98,12 +83,12 @@ export class AuthService {
 
         const { verifyCode } = confirmInfoString
 
-        await this.verifySign({
-            signature: doc.sign,
-            address: doc.address,
-            verifyCode,
-            time: doc.time,
-        })
+        // await this.verifySign({
+        //     signature: doc.sign,
+        //     address: doc.address,
+        //     verifyCode,
+        //     time: doc.time,
+        // })
         const token = this.jwtService.sign(
             {
                 address: doc.address,
@@ -146,7 +131,6 @@ export class AuthService {
         }
         return true
     }
-
 
     async logout(token: string) {
         const user = await this.redis.get(token)

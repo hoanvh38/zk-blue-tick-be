@@ -58,9 +58,6 @@ export class AuthGuard implements CanActivate {
     async validateUser(token: string): Promise<any> {
         const user: User = await this.redis.get(token)
         if (!user) throw new UnauthorizedException()
-        if (user.isBlocked) {
-            throw new ForbiddenException(ERROR.USER_BLOCKED)
-        }
 
         if (!user.role) {
             throw new ForbiddenException(ERROR.USER_NOT_YET_REGISTERED)

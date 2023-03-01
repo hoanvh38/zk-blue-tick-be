@@ -2,7 +2,7 @@ import * as Mongo from 'mongoose'
 import { DefinitionsFactory, Prop, Schema } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-import { ROLE } from 'shared/constants'
+import { REQUEST_STATUS, ROLE } from 'shared/constants'
 
 @Schema()
 export class User extends Document {
@@ -15,16 +15,14 @@ export class User extends Document {
 
     @Prop({
         type: String,
-        unique: true,
-        sparse: true,
-    })
-    email: string
-
-    @Prop({
-        type: String,
         default: ROLE.USER,
     })
     role: string
+
+    @Prop({
+        type: String,
+    })
+    uniqueId: string
 
     @Prop({
         type: Boolean,
@@ -34,9 +32,34 @@ export class User extends Document {
 
     @Prop({
         type: String,
-        default: '',
+        default: REQUEST_STATUS.WAITING,
     })
-    blockNote: string
+    requestStatus: REQUEST_STATUS
+
+    @Prop({
+        type: String,
+    })
+    idNumber: string
+
+    @Prop({
+        type: String,
+    })
+    frontImageUrl: string
+
+    @Prop({
+        type: String,
+    })
+    backImageUrl: string
+
+    @Prop({
+        type: String,
+    })
+    supportImageProofUrl: string
+
+    @Prop({
+        type: String,
+    })
+    requireImageUrl: string
 
     @Prop({
         type: Date,
