@@ -83,12 +83,12 @@ export class AuthService {
 
         const { verifyCode } = confirmInfoString
 
-        // await this.verifySign({
-        //     signature: doc.sign,
-        //     address: doc.address,
-        //     verifyCode,
-        //     time: doc.time,
-        // })
+        await this.verifySign({
+            signature: doc.sign,
+            address: doc.address,
+            verifyCode,
+            time: doc.time,
+        })
         const token = this.jwtService.sign(
             {
                 address: doc.address,
